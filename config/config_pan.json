@@ -1,0 +1,35 @@
+{
+    "name": "pan",
+    "train_data_path": "/root/Storage/datasets/ICDAR2015/train/ICDAR2015.txt",
+    "train_args":{
+        "batch_size": 30,
+        "shuffle": true,
+        "num_workers": 8,
+
+        "input_size": 640,
+        "img_channel": 3,
+        "shrink_ratio": 0.5
+    },
+    "optimizer":{
+        "class": "Adam",
+        "lr": 1e-4,
+        "momentum": 0.9
+    },
+    "lr_scheduler":{
+        "step_size": 500,
+        "gamma": 0.5
+    },
+    "model":{
+        "pretrained": true,
+        "resume": "/root/Storage/chun/output/epoch_4646_iter_158000.pth",
+        "epoch": 4646,
+        "iter": 158000
+    },
+    "loss":{
+        "alpha": 0.5,
+        "beta": 0.25,
+        "delta_agg": 0.5,
+        "delta_dis": 3,
+        "ohem_ratio": 3
+    }
+}
